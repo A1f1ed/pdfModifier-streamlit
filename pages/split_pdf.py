@@ -9,7 +9,7 @@ uploaded_file = st.file_uploader('file select',type=['pdf'],accept_multiple_file
 temp_dir = tempfile.mkdtemp()
 file_paths = [] 
 if uploaded_file:
-    pdf_reader = PyPDF2.PdfReader(open(uploaded_file.name,"rb"))
+    pdf_reader = PyPDF2.PdfReader(uploaded_file)
 
 
     # create pdf writer for output files
