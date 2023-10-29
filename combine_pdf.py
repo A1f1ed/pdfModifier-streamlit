@@ -18,7 +18,7 @@ if file_list:
     # for file in file_names:
     #     read_file = PyPDF2.PdfFileReader(open(file,"rb"))
     #     print(file,'read')
-    pdf_reader_list  = [PyPDF2.PdfReader(open(file.name,"rb")) for file in file_list]
+    pdf_reader_list  = [PyPDF2.PdfReader(file) for file in file_list]
 
     # create a pdf writer for the output files
     pdf_writer = PyPDF2.PdfWriter()
