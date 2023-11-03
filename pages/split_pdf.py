@@ -27,7 +27,7 @@ if uploaded_file:
             pdf_writer.write(output_file)
 
     # create an archive
-    zip_name = "splitted_pdf.zip"
+    zip_name = "pages/splitted_pdf.zip"
     with zipfile.ZipFile(zip_name,"w",zipfile.ZIP_DEFLATED) as zipf:
         for file_path in file_paths:
             zipf.write(file_path,os.path.basename(file_path))
