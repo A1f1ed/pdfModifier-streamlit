@@ -27,9 +27,10 @@ if uploaded_file:
             pdf_writer.write(output_file)
 
     # create an archive
-    zip_name = "pages/splitted_pdf.zip"
+    zip_name = "splitted_pdf.zip"
     with zipfile.ZipFile(zip_name,"w",zipfile.ZIP_DEFLATED) as zipf:
         for file_path in file_paths:
             zipf.write(file_path,os.path.basename(file_path))
             
-    st.markdown(f"Download [**{zip_name}**](./{zip_name})", unsafe_allow_html=True)
+    # st.markdown(f"Download [**{zip_name}**](./{zip_name})", unsafe_allow_html=True)
+    st.markdown(f'<a href="./{zip_name}" download="{os.path.basename(zip_name)}">Download {os.path.basename(zip_name)}</a>', unsafe_allow_html=True)
