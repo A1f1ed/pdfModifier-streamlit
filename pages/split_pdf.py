@@ -33,4 +33,4 @@ if uploaded_file:
             zipf.write(file_path,os.path.basename(file_path))
             
     # st.markdown(f"Download [**{zip_name}**](./{zip_name})", unsafe_allow_html=True)
-    st.markdown(f'<a href="./{zip_name}" download="{os.path.basename(zip_name)}">Download {os.path.basename(zip_name)}</a>', unsafe_allow_html=True)
+    st.markdown(f'<a href="pages/{zip_name}" download="{os.path.basename(zip_name)}">Download {os.path.basename(zip_name)}</a>', unsafe_allow_html=True)
