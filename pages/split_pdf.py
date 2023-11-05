@@ -1,6 +1,7 @@
 import streamlit as st
 import PyPDF2
 import zipfile,os,tempfile
+import base64
 
 st.subheader("Select the file you want to split")
 uploaded_file = st.file_uploader('file select',type=['pdf'],accept_multiple_files=False,label_visibility="hidden")
@@ -38,4 +39,4 @@ if uploaded_file:
     # Generate a download link using HTML
     with open(zip_name, "rb") as zip_file:
         zip_data = zip_file.read()
-    st.write(f"Download [**{zip_name}**](data:application/zip;base64,{zip_data.encode('base64')})", unsafe_allow_html=True)
+    st.write(f"Download [**{zip_name}**](data:application/zip;base64,{base64.b64encode(zip_data).decode()})", unsafe_allow_html=True)
