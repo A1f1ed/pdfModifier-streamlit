@@ -48,4 +48,4 @@ if uploaded_file:
     # Generate a download button
     with open(zip_name, "rb") as zip_file:
         zip_data = zip_file.read()
-        st.download_button(label="Download", data=zip_data, key="download-zip")
+        st.download_button(label="Download", data=zip_data, key="download-zip",on_click=None, file_name="splitted_pdf.zip")
