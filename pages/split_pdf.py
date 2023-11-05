@@ -42,5 +42,5 @@ if uploaded_file:
     # st.write(f"Download [**{zip_name}**](data:application/zip;base64,{base64.b64encode(zip_data).decode()})", unsafe_allow_html=True)
 
     # Generate a download link using HTML anchor tag
-    with open(zip_name, "rb") as zip_file:
-        st.markdown(f'<a href="data:application/zip;base64,{zip_file.read().hex()}" download="{zip_name}">Download {zip_name}</a>', unsafe_allow_html=True)
+    # with open(zip_name, "rb") as zip_file:
+    st.markdown(f'<a href="data:application/zip;base64,{zipf.read().hex()}" download="{zip_name}">Download {zip_name}</a>', unsafe_allow_html=True)
