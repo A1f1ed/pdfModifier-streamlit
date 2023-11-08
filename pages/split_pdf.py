@@ -33,19 +33,6 @@ if uploaded_file:
         for file_path in file_paths:
             zipf.write(file_path,os.path.basename(file_path))
             
-    # st.markdown(f"Download [**{zip_name}**](./{zip_name})", unsafe_allow_html=True)
-    # st.markdown(f'<a href="{zip_name}" download="{os.path.basename(zip_name)}">Download {os.path.basename(zip_name)}</a>', unsafe_allow_html=True)
-
-    # Generate a download link using HTML
-    # with open(zip_name, "rb") as zip_file:
-    #     zip_data = zip_file.read()
-    # st.write(f"Download [**{zip_name}**](data:application/zip;base64,{base64.b64encode(zip_data).decode()})", unsafe_allow_html=True)
-
-    # Generate a download link using HTML anchor tag
-    # with open(zip_name, "rb") as zip_file:
-        # st.markdown(f'<a href="data:application/zip;base64,{zipf.read().hex()}" download="{zip_name}">Download {zip_name}</a>', unsafe_allow_html=True)
-    
-    # Generate a download button
     with open(zip_name, "rb") as zip_file:
         zip_data = zip_file.read()
         st.download_button(label="Download", data=zip_data, key="download-zip",on_click=None, file_name="splitted_pdf.zip")
