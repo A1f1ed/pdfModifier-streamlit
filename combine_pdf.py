@@ -20,6 +20,6 @@ if file_list:
     with open("combined.pdf","wb") as output_file:
         pdf_writer.write(output_file)
     
-    with open(output_file,"rb") as file:
+    with open("combined.pdf","rb") as file:
         file_data = file.read()
         st.download_button(label="Download", data=file_data, key="download-pdf",on_click=None, file_name="combined.pdf")

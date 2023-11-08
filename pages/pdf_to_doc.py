@@ -10,7 +10,7 @@ if uploaded_file:
     cv.convert(file_name,start=0,end=None)
     cv.close()
     
-    with open(cv,"rb") as file:
+    with open(file_name,"rb") as file:
         file_data = file.read()
         st.download_button(label="Download", data=file_data, key="download-doc",on_click=None, file_name=file_name)
 
